@@ -1,0 +1,61 @@
+buildscript {
+    ext.kotlin_version = "1.3.72"
+    ext.tornadofx_version = "1.7.19"
+
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+plugins {
+    id "org.openjfx.javafxplugin" version "0.0.8"
+}
+
+plugins {
+    id 'com.github.johnrengelman.shadow' version '5.2.0'
+    id 'java'
+}
+
+apply plugin: "kotlin"
+apply plugin: "application"
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    implementation "no.tornado:tornadofx:$tornadofx_version"
+
+}
+
+mainClassName = "main.MyAppKt"
+
+jar {
+    manifest {
+        attributes(
+                "Class-Path": configurations.compile.collect { it.getName() }.join(" "),
+                "Main-Class": mainClassName
+        )
+    }
+    from(configurations.compile.collect { entry -> zipTree(entry) }) {
+        exclude "META-INF/MANIFEST.MF"
+        exclude "META-INF/*.SF"
+        exclude "META-INF/*.DSA"
+        exclude "META-INF/*.RSA"
+    }
+}
+
+
+// Add the JavaFX version and required modules:
+javafx {
+    version = "12.0.1"
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}

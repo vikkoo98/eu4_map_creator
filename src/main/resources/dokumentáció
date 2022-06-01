@@ -1,0 +1,113 @@
+Fájlok:
+
+settlements.bmp
+    [255,0,0]: Földi provincia
+    [0,0,255]: Vízi provincia
+
+provinces.bmp
+    minden provincia egyedi RGB, provinces.csv szerint
+
+provinces.csv
+    1: ID
+    2-4: RGB
+    5: Provincianév
+    6: "x"
+
+tags.csv
+    1: TAG
+    2-4: RGB
+
+defacto.bmp
+    minden nation egyedi RGB, tags.csv szerint
+
+culture.bmp
+    minden kultúra egyedi RGB, cultures.csv szerint
+
+cultures.csv
+    1: név
+    2-4: RGB
+
+religion.bmp
+    minden kultúra egyedi RGB, religions.csv szerint
+
+religions.csv
+    1: név
+    2-4: RGB
+
+trade_good.bmp
+    minden trade good egyedi RGB, trade_goods.csv szerint
+
+trade_goods.csv
+    1: név
+    2-4: RGB
+
+development.bmp
+    RGB értékek:
+        ->R: tax
+        ->G: production
+        ->B: manpower
+
+area.bmp
+    minden area külön RGB, areas.csv szerint
+    nem feltétlenül kell az areas.csv
+
+areas.csv
+    1: név
+    2-4: RGB
+
+region.bmp
+    minden region külön RGB, regions.csv szerint
+    nem feltétlenül kell az regions.csv
+
+regions.csv
+    1: név
+    2-4: RGB
+
+superregion.bmp
+    minden superregion külön RGB, superregions.csv szerint
+    nem feltétlenül kell az superregions.csv
+
+superregions.csv
+    1: név
+    2-4: RGB
+
+continent.bmp
+    minden continent külön RGB, continents.csv szerint
+    nem feltétlenül kell az continents.csv
+
+continents.csv
+    1: név
+    2-4: RGB
+
+capital.bmp
+    csak a capital-ok, a nation RGB kódjával
+
+nation_properties.csv
+    1: TAG
+    2: név
+    3: melléknév
+    4: graph culture
+    5: tech group
+    6: primary culture
+    7: religion
+    8: government
+    9: government reform
+    10: government rank 1-3
+    11-13: unit colors 1
+    14-16: unit colors 2
+    17-19: revolutionary colors
+
+trade_region.bmp
+    minden provincia a trade regionben azonos RGB-vel, a trade_regions.csv szerint
+
+trade_region_location.bmp
+    csak a capital-ok, a trade region RBG színével
+
+trade_route.bmp
+
+
+trade_regions.csv
+    1: region jelölése
+    2-4: RGB
+    5: region neve
+
